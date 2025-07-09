@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sbore nós</title>
+    <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+    }
+
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      background: #f5f5f5;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .navbar-esquerda,
+    .navbar-meio,
+    .navbar-direita {
+      display: flex;
+      gap: 15px;
+    }
+
+    .navbar button,
+    .navbar a {
+      background: #4caf50;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .navbar a:hover{
+      background: #3e8e41;
+    }
+    
+    .divBusca{
+      background-color:#f1f9f1;
+      border:solid 2px #b2e9b2;
+      border-radius:10px;
+      width:300px;
+      height:32px;
+    }
+
+    .txtBusca{
+      float:left;
+      background-color:transparent;
+      padding-left: 4px;
+      padding-right:35px;
+      font-size:18px;
+      border:none;
+      height:32px;
+      width:191px;
+    }
+
+    .btnBusca{
+      border:none;
+      height:32px;
+      width:70px;
+      font-weight:bold;
+      background:#4caf50;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-around;
+      padding: 50px;
+    }
+
+    .card {
+      width: 200px;
+      text-align: center;
+      margin: 20px;
+    }
+
+    .card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+
+    .nome {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .descricao {
+      font-size: 14px;
+      text-align: justify;
+      color: #333;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 14px;
+    }
+    </style>
+</head>
+<body>
+      <div class="navbar">
+    <div class="navbar-esquerda">
+      <a href="site.html">Início</a>
+      <a href="sobrenos.html">Sobre nós</a>
+      <a href="#">serviços 🔒</a>
+    </div>
+    <div class="navbar-meio">
+      <div class="divBusca">
+      <input type="text" class="txtBusca" placeholder="Buscar..."/>
+      <button class="btnBusca">Buscar</button>
+      </div>
+      <a href="#">🛒</a>
+    </div>
+    <div class="navbar-direita">
+      <a href="cadastro.html">Criar conta</a>
+      <a href="login.html">Entrar</a>
+    </div>
+  </div>
+<div class="container">
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Perfil">
+      <div class="nome">Nome Completo</div>
+      <div class="descricao">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="perfil">
+      <div class="nome">Nome Completo</div>
+      <div class="descricao">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Perfil">
+      <div class="nome">Nome Completo</div>
+      <div class="descricao">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Perfil">
+      <div class="nome">Nome Completo</div>
+      <div class="descricao">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Tel: (88)99999-9999 &nbsp; | &nbsp; E-mail: aprendaaqui@hotmail.com
+  </div>
+</body>
+</html>

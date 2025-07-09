@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Criar Conta</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .cadastro {
+      background-color: #f1f9f1;
+      border: 1px solid #336633;
+      padding: 40px;
+      border-radius: 5px;
+      width: 430px;
+      text-align: center;
+    }
+
+    .cadastro h2 {
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .cadastro p {
+      color: #4caf50;
+      margin: 5px;
+    }
+
+    .cadastro input[type="text"],
+    .cadastro input[type="email"],
+    .cadastro input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #888;
+      border-radius: 5px;
+    }
+
+    .password-grupo {
+      display: flex;
+      gap: 10px;
+    }
+
+    .password-grupo input {
+      width: 100%;
+    }
+
+    .radio-grupo {
+      text-align: left;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .radio-grupo label {
+      display: block;
+      margin: 5px 0;
+    }
+
+    .cadastro button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #4caf50;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .cadastro button:hover {
+      background-color: #43a047;
+    }
+
+    .cadastro .login {
+      text-align: center;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .cadastro .login a {
+      font-size: 16px;
+      text-decoration: none;
+      color: #0000ee;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cadastro">
+    <h2>CADASTRO</h2>
+    <p>Seja bem vindo!</p>
+    <form>
+    <input type="text" placeholder="Digite seu nome..." required/>
+    <input type="email" placeholder="Digite seu email..." required />
+
+    <div class="password-grupo">
+      <input type="password" placeholder="Crie uma senha" required/>
+      <input type="password" placeholder="Confirmação de senha" required/>
+    </div>
+
+    <div class="radio-grupo">
+      <label><input type="radio" name="tipoConta" s/> Criar conta para funcionário</label>
+      <label><input type="radio" name="tipoConta" /> Criar conta para usuário</label>
+    </div>
+
+    <button type="submit">Criar conta</button>
+    </form>
+    <div class="login"><p>Já tem uma conta?<a href="login.html">Faça login!</a></p></div>
+  </div>
+</body>
+</html>

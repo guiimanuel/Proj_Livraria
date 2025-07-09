@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loja de Livros</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #ffffff;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      background: #f5f5f5;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .navbar-esquerda,
+    .navbar-meio,
+    .navbar-direita {
+      display: flex;
+      gap: 15px;
+    }
+
+    .navbar button,
+    .navbar a {
+      background: #4caf50;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .navbar a:hover{
+      background: #3e8e41;
+    }
+
+    .destaques-titulo {
+      text-align: center;
+      font-weight: bold;
+      background-color: #e0f0e0;
+      padding: 10px;
+      margin: 10px;
+    }
+
+    .destaques {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .seta {
+      font-size: 24px;
+    }
+
+    .livro {
+      text-align: center;
+      width: 120px;
+    }
+
+    .imagem {
+      height: 150px;
+      margin-bottom: 5px;
+    }
+
+    .livro button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 6px;
+      border-radius: 5px;
+      margin: 5px;
+    }
+
+    .livro button:hover {
+      background-color: #3e8e41;
+    }
+
+    .categorias {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .categorias button {
+      background: #6abf69;
+      border: none;
+      color: white;
+      padding: 15px;
+      margin: 5px;
+      border-radius: 5px;
+    }
+
+    .categorias button.active {
+      border: 2px solid #000;
+      background: #ffffff;
+      color: #000;
+    }
+
+    .categorias button:hover {
+      background: #4caf50;
+      color: white;
+    }
+
+    .divBusca{
+      background-color:#f1f9f1;
+      border:solid 2px #b2e9b2;
+      border-radius:10px;
+      width:300px;
+      height:32px;
+    }
+
+    .txtBusca{
+      float:left;
+      background-color:transparent;
+      padding-left: 4px;
+      padding-right:35px;
+      font-size:18px;
+      border:none;
+      height:32px;
+      width:191px;
+    }
+
+    .btnBusca{
+      border:none;
+      height:32px;
+      width:70px;
+      font-weight:bold;
+      background:#4caf50;
+    }
+
+    section{
+      padding-bottom: 15px;
+    }
+
+    main{
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      gap: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-esquerda">
+      <a href="site.html">Início</a>
+      <a href="sobrenos.html">Sobre nós</a>
+      <a href="#">serviços 🔒</a>
+    </div>
+    <div class="navbar-meio">
+      <div class="divBusca">
+      <input type="text" class="txtBusca" placeholder="Buscar..."/>
+      <button class="btnBusca">Buscar</button>
+      </div>
+      <a href="#">🛒</a>
+    </div>
+    <div class="navbar-direita">
+      <a href="cadastro.html">Criar conta</a>
+      <a href="login.html">Entrar</a>
+    </div>
+  </div>
+<main>
+  <section>
+    <div class="destaques-titulo">DESTAQUES:</div>
+
+    <div class="destaques">
+      <div class="seta">&#11164; </div>
+    
+        <div class="livro">
+          <img src="imagens/livroteste.png" alt="" class="imagem">
+          <div>R$54,99</div>
+          <button>Adicionar ao carrinho</button>
+        </div>
+
+        <div class="livro">
+          <img src="imagens/livroteste.png" alt="" class="imagem"> 
+          <div>R$43,99</div>
+          <button>Adicionar ao carrinho</button>
+        </div>
+
+        <div class="livro">
+          <img src="imagens/livroteste.png" alt="" class="imagem">
+          <div>R$60,99</div>
+          <button>Adicionar ao carrinho</button>
+        </div>
+
+        <div class="livro">
+          <img src="imagens/livroteste.png" alt="" class="imagem">
+          <div>R$24,00</div>
+          <button>Adicionar ao carrinho</button>
+        </div>
+
+        <div class="livro">
+          <img src="imagens/livroteste.png" alt="" class="imagem">
+          <div>R$78,99</div>
+          <button>Adicionar ao carrinho</button>
+        </div>
+
+      <div class="seta">&#11166;</div>
+  </div>
+
+  <div class="categorias">
+    <p>Listar por categoria:</p>
+    <button>Romance</button>
+    <button class="active">Aventura</button>
+    <button>Ficção</button>
+    <button>Mangá</button>
+    <button>Novela</button>
+  </div>
+
+  </section>
+
+  <section>
+    <div class="destaques-titulo">Livros acessados nas últimas 24 horas:</div>
+
+    <div class="destaques">
+      <div class="seta">&#11164;</div>
+
+    <div class="livro">
+      <img src="imagens/livroteste.png" alt="" class="imagem">
+      <div>R$54,99</div>
+      <button>Adicionar ao carrinho</button>
+    </div>
+
+    <div class="livro">
+      <img src="imagens/livroteste.png" alt="" class="imagem">
+      <div>R$43,99</div>
+      <button>Adicionar ao carrinho</button>
+    </div>
+
+    <div class="livro">
+      <img src="imagens/livroteste.png" alt="" class="imagem">
+      <div>R$60,99</div>
+      <button>Adicionar ao carrinho</button>
+    </div>
+
+    <div class="livro">
+      <img src="imagens/livroteste.png" alt="" class="imagem">
+      <div>R$24,00</div>
+      <button>Adicionar ao carrinho</button>
+    </div>
+
+    <div class="livro">
+      <img src="imagens/livroteste.png" alt="" class="imagem">
+      <div>R$78,99</div>
+      <button>Adicionar ao carrinho</button>
+    </div>
+
+    <div class="seta">&#11166;</div>
+  </div>
+
+  <div class="categorias">
+    <p>Listar por categoria:</p>
+    <button>Romance</button>
+    <button>Aventura</button>
+    <button>Ficção</button>
+    <button class="active">Mangá</button>
+    <button>Novela</button>
+  </div>
+
+</section>
+</main>
+</body>
+</html>
