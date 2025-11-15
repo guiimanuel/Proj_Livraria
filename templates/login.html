@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - LivrariaAQUI</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login {
+      background-color: #f1f9f1;
+      text-align: center;
+      width: 500px;
+      padding: 40px;
+      border: 1px solid #336633;
+      border-radius: 5px;
+    }
+
+    .login h2 {
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .login p {
+      color: #4caf50;
+      margin-bottom: 20px;
+    }
+
+    .login input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #999;
+      border-radius: 5px;
+    }
+
+    .login .crie {
+        text-align: center;
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    .login .crie a {
+      font-size: 16px;
+      text-decoration: none;
+      color: #0000ee;
+    }
+
+    .login .esqueci {
+      text-align: center;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .login .esqueci a {
+        font-size: 16px;
+      text-decoration: none;
+      color: #0000ee;
+    }
+
+    .login button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4caf50;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .login button:hover {
+      background-color: #43a047;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login">
+    <h2>LOGIN</h2>
+    <p>será rápido!</p>
+    <form action="" method="post">
+    <input type="text" placeholder="Digite seu nome..." name="nomeForm" id="" required>
+    <input type="password" placeholder="Digite sua senha..." name="senhaForm" id="" required>
+    <button type="submit" value="login">Entrar</button>
+    </form>
+    <div class="crie">
+        <p>Não tem uma conta?<a href="cadastro">Crie uma!</a></p>
+    </div>
+  
+  </div>
+
+</body>
+</html>

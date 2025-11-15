@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços - LivrariaAQUI</title>
+
+
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #ffffff;
+    }
+.crud{
+    margin: 40px;
+   
+}
+    .navbar {
+        margin-left: 0;
+      display: flex;
+      justify-content: space-between;
+      background: #f5f5f5;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .navbar-esquerda,
+    .navbar-meio,
+    .navbar-direita {
+      display: flex;
+      gap: 15px;
+    }
+
+    .navbar button,
+    .navbar a {
+      background: #4caf50;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .navbar a:hover{
+      background: #3e8e41;
+    }
+
+    .destaques-titulo {
+      text-align: center;
+      font-weight: bold;
+      background-color: #e0f0e0;
+      padding: 10px;
+      margin: 10px;
+    }
+
+    .destaques {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .seta {
+      font-size: 24px;
+    }
+
+    .livro {
+      text-align: center;
+      width: 120px;
+    }
+
+    .imagem {
+      height: 150px;
+      margin-bottom: 5px;
+    }
+
+
+
+    .divBusca{
+      background-color:#f1f9f1;
+      border:solid 2px #b2e9b2;
+      border-radius:10px;
+      width:300px;
+      height:32px;
+    }
+
+    .txtBusca{
+      float:left;
+      background-color:transparent;
+      padding-left: 4px;
+      padding-right:35px;
+      font-size:18px;
+      border:none;
+      height:32px;
+      width:191px;
+    }
+
+    button:hover {
+      background-color: #3e8e41;
+      
+    }
+
+    .btnBusca{
+      border:none;
+      height:32px;
+      width:70px;
+      font-weight:bold;
+      background:#4caf50;
+    }
+
+    section{
+      padding-bottom: 15px;
+    }
+
+    main{
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      gap: 30px;
+    }
+
+       
+        h1 {
+            font-size: 40px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+.footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 14px;
+    }
+      
+    </style>
+    <script>
+        function toggleBooks() {
+            const booksTable = document.getElementById('booksTable');
+            const btn = document.getElementById('showBooksBtn');
+            if (booksTable.style.display === 'none') {
+                booksTable.style.display = 'block';
+                btn.textContent = 'Ocultar Livros';
+            } else {
+                booksTable.style.display = 'none';
+                btn.textContent = 'Mostrar Livros Cadastrados';
+            }
+        }
+        
+        function showText(value) {
+            const previewArea = document.getElementById('previewArea');
+            const previewText = document.getElementById('previewText');
+            if (value) {
+                previewArea.style.display = 'block';
+                previewText.textContent = value;
+            } else {
+                previewArea.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="navbar-esquerda">
+      <a href="/">Início</a>
+      <a href="sobrenos">Sobre nós</a>
+      <a href="adicionar">serviços 🔓</a>
+      <a href="buscar_livro" title="Buscar livros">🔍</a>
+    </div>
+    <div class="navbar-meio">
+      
+      </div>
+    <div class="navbar-direita">
+      <a href="carrinho">🛒</a>
+      <a href="cadastro">Criar conta</a>
+      <a href="login">Entrar</a>
+    </div>
+  </div>
+
+<!--CÓDIGO-->
+<main class="crud">
+    <h1>Adicionar Livro</h1>
+    <form method="POST" action="{{ url_for('adicionar_livro') }}">
+        <label for="titulo">Nome do Livro:</label>
+        <input type="text" id="titulo" name="titulo" required oninput="showText(this.value)" style="width: 350px; height: 24px;">
+        <button type="submit" style="width: 350px; height: 30px; background-color: #4caf50;font-size: 16px; color: white;">Adicionar Livro</button>
+    </form>
+    
+    <div id="previewArea" style="margin: 16px 0; padding: 10px; background: #f0f0f0; display: none; font-weight: bold; color:rgb(20, 20, 20)">
+        <p>Você vai adicionar: <strong id="previewText"></strong></p>
+    </div>
+    <button id="showBooksBtn" onclick="toggleBooks()" style="width: 350px; height: 30px; background-color: #4caf50; font-size: 16px; color: white; margin-left: 476px;">Mostrar Livros Cadastrados</button>
+    
+    <div id="booksTable" style="display: none;">
+        <h2>Lista de Livros</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for livro in livros %}
+                <tr>
+                    <td>{{ livro.id }}</td>
+                    <td>{{ livro.titulo }}</td>
+                    <td>
+                        <form method="POST" action="{{ url_for('remover_livro', livro_id=livro.id) }}" style="display:inline;">
+                            <button type="submit" onclick="return confirm('Tem certeza que deseja remover este livro?')">Remover</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% if not livros %}
+
+    {% endif %}
+    <a href="/">Voltar</a>
+
+    </main>
+
+     <div class="footer">
+    Tel: (88)99999-9999 &nbsp; | &nbsp; E-mail: livrariaaqui@hotmail.com
+  </div>
+</body>
+</html>

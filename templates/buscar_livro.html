@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar - LivrariaAQUI</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #ffffff;
+        }
+        .crud {
+            margin: 40px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background: #f5f5f5;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ccc;
+        }
+        .navbar-esquerda,
+        .navbar-meio,
+        .navbar-direita {
+            display: flex;
+            gap: 15px;
+        }
+        .navbar button,
+        .navbar a {
+            background: #4caf50;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background: #3e8e41;
+        }
+        .destaques-titulo {
+            text-align: center;
+            font-weight: bold;
+            background-color: #e0f0e0;
+            padding: 10px;
+            margin: 10px;
+        }
+        .destaques {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+        .seta {
+            font-size: 24px;
+        }
+        .livro {
+            text-align: center;
+            width: 120px;
+        }
+        .imagem {
+            height: 150px;
+            margin-bottom: 5px;
+        }
+        button:hover {
+            background-color: #3e8e41;
+        }
+        section {
+            padding-bottom: 15px;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            gap: 30px;
+        }
+        h1 {
+            font-size: 40px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+    <script>
+        function toggleBooks() {
+            const booksTable = document.getElementById('booksTable');
+            if (booksTable.style.display === 'none') {
+                booksTable.style.display = 'block';
+                btn.textContent = 'Ocultar Livros';
+            } else {
+                booksTable.style.display = 'none';
+                btn.textContent = 'Mostrar Livros';
+            }
+        }
+        function showText(value) {
+            const text = document.getElementById('text');
+            if (value === 'livros') {
+                text.textContent = 'Livros Cadastrados';
+            } else {
+                text.textContent = '';
+            }
+        }
+        </script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-esquerda">
+            <a href="/">Início</a>
+            <a href="sobrenos">Sobre nós</a> 
+            <a href="adicionar">serviços 🔒</a>
+            <a href="buscar_livro" title="Buscar livros">🔍</a>
+        </div>
+        <div class="navbar-meio">
+        
+        </div>
+        <div class="navbar-direita">
+            <a href="carrinho">🛒</a>
+            <a href="cadastro">Criar conta</a>
+            <a href="login">Entrar</a>
+        </div>
+    </div>
+
+    <main class="crud">
+        <h1>Buscar Livro</h1>
+        <form method="GET" action="{{ url_for('buscar_livro') }}">
+            <label for="titulo">Nome do Livro:</label>
+            <input type="text" id="titulo" name="titulo" required oninput="showText(this.value)" style="width: 350px; height: 24px;">
+            <button type="submit" style="width: 350px; height: 30px; background-color: #4caf50;font-size: 16px; color: white;">Buscar Livro</button>
+        </form>
+
+        {% if livros %}
+            <h2>Resultados para: {% if titulo %}"{{ titulo }}"{% else %}Todos os livros{% endif %}</h2>
+            <table id="booksTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for livro in livros %}
+                        <tr>
+                            <td>{{ livro.id }}</td>
+                            <td>{{ livro.titulo }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>Nenhum livro encontrado{% if titulo %} para "{{ titulo }}"{% endif %}.</p>
+        {% endif %}
+        <a href="/">Voltar</a>
+    </main>
+
+    <div class="footer">
+    Tel: (88)99999-9999 &nbsp; | &nbsp; E-mail: livrariaaqui@hotmail.com
+  </div>
+</body>
+</html>
